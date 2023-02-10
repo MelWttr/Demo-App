@@ -4,7 +4,7 @@ import { routeConfig } from "shared/config/routeConfig/routeConfig";
 
 export function AppRouter () {
   return (
-    <div>
+    <div className='content-wrapper'>
       <Suspense fallback={<div>...Loading</div>}>
         <Routes>
           {
