@@ -45,7 +45,22 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
+    const babelLoader = {
+        test: /\.(js|ts|tsx)$/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: [
+                    ['@babel/preset-env'],
+                    '@babel/preset-typescript',
+                ],
+
+            },
+        },
+    };
+
     return [
+        babelLoader,
         typescriptLoader,
         cssLoader,
         svgLoader,
