@@ -12,3 +12,11 @@
 .collapsed {
   width: var(--sedebar-width-collapsed);
 }
+
+.switchers {
+  margin-top: auto;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

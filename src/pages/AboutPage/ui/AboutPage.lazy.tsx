@@ -1,6 +1,6 @@
-import {lazyLoadingTimeout} from 'shared/lib/lazyLoading';
-import React from 'react';
+import { lazyLoadingTimeout } from 'shared/lib/lazyLoading';
+import { lazy } from 'react';
 
-export const AboutPageLazy = React.lazy(
-  () => { return lazyLoadingTimeout(import('./AboutPage'), 1000)},
-  );
+export const AboutPageLazy = lazy(
+    () => lazyLoadingTimeout(import('./AboutPage'), 1000),
+);
