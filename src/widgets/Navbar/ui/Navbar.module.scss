@@ -1,9 +1,9 @@
 .navbar {
-  height: var(--navbar-height);
-  background: var(--bg-color-inverted);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 15px;
-  padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 12px;
+    height: var(--navbar-height);
+    background: var(--bg-color-inverted);
+    gap: 15px;
 }
