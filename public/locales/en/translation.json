@@ -3,5 +3,7 @@
   "Translate": "Translate",
   "Toggle": "Toggle",
   "About": "About",
-  "NotFound": "Page not found"
+  "NotFound": "Page not found",
+  "Error": "Error occured",
+  "Reload": "Reload page"
 }
