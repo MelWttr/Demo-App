@@ -16,7 +16,12 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
         className = '', children, theme, onClick, ...other
     } = props;
     return (
-        <button type="button" onClick={onClick} className={classNames(cls.button, {}, [className])}>
+        <button
+            type="button"
+            onClick={onClick}
+            className={classNames(cls.button, {}, [className])}
+            {...other}
+        >
             {children}
         </button>
     );
