@@ -20,6 +20,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         }),
         new BundleAnalyzerPlugin({
             openAnalyzer: false,
+            analyzerMode: isDev ? 'server' : 'disabled',
         }),
     ];
     if (isDev) {
