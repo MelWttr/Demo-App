@@ -2,14 +2,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     padding: 20px;
     padding-top: 60px;
     width: var(--sidebar-width);
     height: calc(100vh - var(--navbar-height));
+    color: var(--inverted-primary-color);
     background-color: var(--inverted-bg-color);
     transition: width 0.2s;
-    color: var(--inverted-primary-color);
-    overflow: hidden;
 }
 
 .collapsed {
@@ -26,15 +26,15 @@
 
 .collapseBtn {
     position: absolute;
-    top: 15px;
     right: 10px;
+    top: 15px;
 }
 
 .itemsWrapper {
     display: flex;
     flex-direction: column;
-    gap: 15px;
     margin-left: 20px;
+    gap: 15px;
 }
 
 .link {

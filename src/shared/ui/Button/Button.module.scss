@@ -13,28 +13,31 @@
 }
 
 .background {
-    background-color: var(--bg-color);
     color: var(--primary-color);
+    background-color: var(--bg-color);
 }
 
 .background-inverted {
-    background-color: var(--inverted-bg-color);
     color: var(--inverted-primary-color);
+    background-color: var(--inverted-bg-color);
 }
 
 .square {
     padding: 0;
+
     &.size-m {
         width: var(--font-line-m);
-        height: var(--font-line-m); 
+        height: var(--font-line-m);
     }
+
     &.size-l {
         width: var(--font-line-l);
-        height: var(--font-line-l); 
+        height: var(--font-line-l);
     }
+
     &.size-xl {
         width: var(--font-line-xl);
-        height: var(--font-line-xl); 
+        height: var(--font-line-xl);
     }
 }
 

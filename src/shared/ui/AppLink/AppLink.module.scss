@@ -1,9 +1,9 @@
 .appLink {
-    color: var(--primary-color);
     display: flex;
     align-items: center;
-    min-height: 24px;
     overflow: hidden;
+    min-height: 24px;
+    color: var(--primary-color);
 }
 
 .primary {
