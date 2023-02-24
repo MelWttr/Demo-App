@@ -28,7 +28,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
         theme = '',
         onClick,
         square = false,
-        size = ButtonSize['M'], 
+        size = ButtonSize.M,
         ...other
     } = props;
 
@@ -36,7 +36,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
         [cls[theme]]: Boolean(theme),
         [cls.square]: square,
 
-    }
+    };
     return (
         <button
             type="button"
