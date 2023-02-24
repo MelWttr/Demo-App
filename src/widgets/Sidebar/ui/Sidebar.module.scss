@@ -3,10 +3,13 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
+    padding-top: 60px;
     width: var(--sidebar-width);
     height: calc(100vh - var(--navbar-height));
     background-color: var(--inverted-bg-color);
     transition: width 0.2s;
+    color: var(--inverted-primary-color);
+    overflow: hidden;
 }
 
 .collapsed {
@@ -19,4 +22,27 @@
     justify-content: center;
     margin-top: auto;
     gap: 15px;
+}
+
+.collapseBtn {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+.itemsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.link {
+    flex-shrink: 0;
+}
+
+.linkIcon {
+    flex-shrink: 0;
+    margin-right: 20px;
+    fill: var(--inverted-primary-color);
 }
