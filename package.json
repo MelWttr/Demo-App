@@ -11,12 +11,13 @@
     "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test": "jest",
     "test:ui": "loki test",
     "test:ui:ok": "loki approve",
+    "test:ui:ci": "brew install graphicsmagick && npx loki --requireReference update --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "repository": {
     "type": "git",
@@ -99,14 +100,14 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
       }
     }
