@@ -15,4 +15,11 @@
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sedebar-width-collapsed: calc(var(--sidebar-width) / 3);
+
+    // Цвета 
+    --overlay-bg: rgba(0,0,0,0.5);
+
+    // z-index
+
+    --z-index-modal: 10;
 }
