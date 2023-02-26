@@ -1,6 +1,8 @@
+/* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { useTranslation } from 'react-i18next';
+import { Button } from 'shared/ui/Button/Button';
+import { Modal } from 'shared/ui/Modal/Modal';
+import { useState } from 'react';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -9,12 +11,21 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className = '' }: NavbarProps) => {
-    const { t } = useTranslation();
-
+    const [isOpen, setIsOpen] = useState(false);
+    const openModal = () => {
+        setIsOpen(true);
+    };
+    const closeModal = () => {
+        setIsOpen(false);
+    };
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
-            <AppLink theme={AppLinkTheme.PRIMARY} to="/">{t('Main')}</AppLink>
-            <AppLink theme={AppLinkTheme.PRIMARY} to="/about">{t('About')}</AppLink>
+            <Button onClick={openModal}>
+                toggle
+            </Button>
+            <Modal isOpen={isOpen} onClose={closeModal}>
+                fldnkshdhgdfhgjk dfhgkjdhgkj dhgkjfdg hkgdjhkjfdhgd kjghfdjghdfg dhjkgh
+            </Modal>
         </div>
     );
 };
