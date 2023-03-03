@@ -5,7 +5,8 @@ import cls from './Button.module.scss';
 export enum ButtonTheme {
     OUTLINE = 'outline',
     BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'background-inverted'
+    BACKGROUND_INVERTED = 'background-inverted',
+    INVERTED = 'inverted'
 }
 
 export enum ButtonSize {

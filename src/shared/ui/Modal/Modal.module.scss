@@ -19,6 +19,8 @@
 }
 
 .content {
+    border-radius: 12px;
+    padding: 15px;
     max-width: 60%;
     background-color: var(--bg-color);
     transform: scale(0.5);
@@ -35,22 +37,8 @@
     }
 }
 
-.closed {
-    transform: scale(0.2);
+.isClosing {
+    .content {
+        transform: scale(0.2);
+    }
 }
-
-// .closed {
-
-//     .content {
-//         animation: closingModal 1s forwards;
-//     }
-// }
-
-// @keyframes closingModal {
-//     from {
-//         transform: scale(1);
-//     }
-//     to {
-//         transform: scale(0.2);
-//     }
-//   }
