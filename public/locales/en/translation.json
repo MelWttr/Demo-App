@@ -7,5 +7,7 @@
   "NotFound": "Page not found",
   "Error": "Error occured",
   "Reload": "Reload page",
-  "Enter": "Enter"
+  "Enter": "Enter",
+  "Username": "Enter username",
+  "Email": "Enter email"
 }

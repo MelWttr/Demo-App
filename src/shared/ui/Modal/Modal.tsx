@@ -2,7 +2,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable i18next/no-literal-string */
 import React, {
-    FC, ReactNode, useState, useMemo, useEffect, useRef, useCallback,
+    FC,
+    ReactNode,
+    useState,
+    useMemo,
+    useEffect,
+    useRef,
+    useCallback,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
@@ -17,13 +23,18 @@ interface ModalProps {
 const ANIMATION_TIMEOUT = 250;
 
 export const Modal: FC<ModalProps> = ({
-    children, isOpen, onClose, className = '',
+    children,
+    isOpen,
+    onClose,
+    className = '',
 }: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
+    const [isOpening, setIsOpening] = useState(false);
 
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = useCallback(() => {
+        setIsOpening(false);
         setIsClosing(true);
         timerRef.current = setTimeout(() => {
             onClose?.();
@@ -38,6 +49,9 @@ export const Modal: FC<ModalProps> = ({
             }
         };
         if (isOpen) {
+            timerRef.current = setTimeout(() => {
+                setIsOpening(true);
+            }, 0);
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
@@ -53,18 +67,21 @@ export const Modal: FC<ModalProps> = ({
     const mods = useMemo(() => ({
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-    }), [isOpen, isClosing]);
+        [cls.isOpening]: isOpening,
+    }), [isOpen, isClosing, isOpening]);
 
     return (isOpen
         ? (
             <div className={classNames(cls.modal, mods, [className])}>
                 <div className={cls.overlay} onClick={closeHandler}>
+
                     <div
                         className={classNames(cls.content)}
                         onClick={onContentClick}
                     >
                         {children}
                     </div>
+
                 </div>
             </div>
         )

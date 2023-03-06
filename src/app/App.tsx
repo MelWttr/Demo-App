@@ -10,7 +10,7 @@ const App = () => {
 
     return (
         <Suspense fallback="">
-            <div className={classNames('app', {}, [theme || ''])}>
+            <div className={classNames('app', {}, [])}>
                 <Navbar />
                 <div className="page-wrapper">
                     <Sidebar />

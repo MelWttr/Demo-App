@@ -5,6 +5,7 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { useCallback, useState } from 'react';
 import { t } from 'i18next';
 import { Portal } from 'shared/ui/Portal/Portal';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -13,30 +14,19 @@ interface NavbarProps {
 
 export const Navbar = ({ className = '' }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState(false);
-    const onToggleModal = useCallback(() => {
-        setIsOpen((prev) => !prev);
+    const onOpenModal = useCallback(() => {
+        setIsOpen(true);
+    }, []);
+    const onCloseModal = useCallback(() => {
+        setIsOpen(false);
     }, []);
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
-            <Button theme={ButtonTheme.INVERTED} onClick={onToggleModal}>
+            <Button theme={ButtonTheme.INVERTED} onClick={onOpenModal}>
                 {t('Enter')}
             </Button>
             <Portal>
-                <Modal isOpen={isOpen} onClose={onToggleModal}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repudiandae reiciendis modi voluptate dolore officia enim autem
-                    esse delectus at distinctio repellendus quod doloribus suscipit a
-                    ratione odit blanditiis ut rem natus voluptatem possimus, amet inventore placeat
-                    Reprehenderit, animi! Omnis incidunt sed ipsa, hic illo rem perferendis
-                    quas et atque, est ratione culpa officia repudiandae quidem exercitationem
-                    expedita consequatur dolor
-                    qui delectus eius voluptatibus molestias itaque quia?
-                    Distinctio repudiandae saepe veniam nam explicabo
-                    molestias expedita nobis reiciendis quae facilis!
-                    Veniam tempore libero adipisci dolore ad corrupti
-                    facere repellendus natus ullam, molestiae
-                    laboriosam soluta numquam eius est nobis quae illo perferendis nulla!
-                </Modal>
+                <LoginModal onClose={onCloseModal} isOpen={isOpen} />
 
             </Portal>
         </div>

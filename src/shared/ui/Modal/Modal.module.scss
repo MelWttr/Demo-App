@@ -31,14 +31,16 @@
     z-index: var(--modal-z-index);
     opacity: 1;
     pointer-events: auto;
-
-    .content {
-        transform: scale(1);
-    }
 }
 
 .isClosing {
     .content {
         transform: scale(0.2);
+    }
+}
+
+.isOpening {
+    .content {
+        transform: scale(1);
     }
 }
