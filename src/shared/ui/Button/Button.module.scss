@@ -45,6 +45,11 @@
     }
 }
 
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .size-m {
     font: var(--font-m);
 }

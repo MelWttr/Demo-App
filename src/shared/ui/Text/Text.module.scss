@@ -1,0 +1,30 @@
+.title {
+    margin: 0;
+    margin-bottom: 15px;
+    font: var(--font-l);
+    color: var(--primary-color);
+}
+
+.paragraph {
+    margin: 0;
+    margin-bottom: 10px;
+    font: var(--font-m);
+    color: var(--secondary-color);
+}
+
+.primary {
+    .title {
+        color: var(--primary-color);
+    }
+
+    .paragraph {
+        color: var(--secondary-color);
+    }
+}
+
+.error {
+    .title,
+    .paragraph {
+        color: var(--error-color);
+    }
+}

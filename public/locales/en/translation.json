@@ -9,5 +9,9 @@
   "Reload": "Reload page",
   "Enter": "Enter",
   "Username": "Enter username",
-  "Email": "Enter email"
+  "Email": "Enter email",
+  "Password": "Enter password",
+  "Auth": "Authorization",
+  "Invalid username or password": "Invalid username or password",
+  "Exit": "Exit"
 }
