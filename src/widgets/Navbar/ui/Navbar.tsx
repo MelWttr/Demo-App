@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Portal } from 'shared/ui/Portal/Portal';
 import { LoginModal } from 'features/AuthByUsername';
@@ -12,7 +12,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className = '' }: NavbarProps) => {
+export const Navbar = memo(({ className = '' }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
@@ -51,4 +51,4 @@ export const Navbar = ({ className = '' }: NavbarProps) => {
             </Portal>
         </div>
     );
-};
+});

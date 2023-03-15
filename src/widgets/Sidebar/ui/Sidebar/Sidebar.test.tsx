@@ -1,4 +1,4 @@
-import { Sidebar } from 'widgets/Sidebar/ui/Sidebar';
+import { Sidebar } from 'widgets/Sidebar';
 import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
 

@@ -25,5 +25,15 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "John",
+    "lastname": "Smith",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Saint-P",
+    "username": "admin",
+    "avatar": "https://static.wikia.nocookie.net/metalgear/images/7/78/Big_Boss_TPP_infobox.png/revision/latest?cb=20180901131627"
+
+   }
 }

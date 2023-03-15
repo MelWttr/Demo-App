@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
 import ThemeIcon from 'shared/assets/icons/theme-switcher.svg';
@@ -9,11 +9,11 @@ interface ThemeSwitcherProps {
 
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className = '' }: ThemeSwitcherProps) => {
+export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className = '' }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <Button onClick={toggleTheme} className={classNames('', {}, [className])}>
             <ThemeIcon fill="var(--inverted-primary-color)" />
         </Button>
     );
-};
+});

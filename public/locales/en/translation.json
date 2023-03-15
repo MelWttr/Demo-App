@@ -13,5 +13,6 @@
   "Password": "Enter password",
   "Auth": "Authorization",
   "Invalid username or password": "Invalid username or password",
-  "Exit": "Exit"
+  "Exit": "Exit",
+  "Profile": "Profile page"
 }
