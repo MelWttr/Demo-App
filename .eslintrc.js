@@ -59,9 +59,11 @@ module.exports = {
         'jsx-a11y/label-has-associated-control': 'warn',
         'jsx-a11y/no-autofocus': 'warn',
         'no-param-reassign': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     settings: {
         react: {

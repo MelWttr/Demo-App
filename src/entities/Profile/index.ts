@@ -8,4 +8,10 @@ export {
     Profile,
 } from './model/types/profile';
 
-// export { getUserAuthData } from './model/selectors/getUserAuthData/gerUserAuthData';
+export {
+    fetchProfileData,
+} from './model/services/fetchProfileData/fetchProfileData';
+
+export {
+    ProfileCard,
+} from './ui/ProfileCard/ProfileCard';

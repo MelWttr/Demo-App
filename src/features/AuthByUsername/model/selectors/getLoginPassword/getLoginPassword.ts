@@ -4,5 +4,5 @@ import { getLoginState } from '../getLoginState/getLoginState';
 
 export const getLoginPassword = createSelector(
     getLoginState,
-    (loginFormState: LoginSchema) => loginFormState?.password || '',
+    (loginFormState: LoginSchema | undefined) => loginFormState?.password || '',
 );

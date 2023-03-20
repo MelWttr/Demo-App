@@ -1,3 +1,9 @@
 {
-  "Profile": "Profile page"
+  "Profile": "Profile page",
+  "User Profile": "User Profile",
+  "Your firstname": "Your firstname",
+  "Your lastname": "Your lastname",
+  "Edit": "Edit profile",
+  "Firstname": "Firstname",
+  "Lastname": "Lastname"
 }

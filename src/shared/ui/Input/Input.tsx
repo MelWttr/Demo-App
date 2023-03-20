@@ -45,7 +45,7 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
     };
     return (
         <label className={classNames(cls.inputLabel, {}, [className])}>
-            {label ? <span className={cls.labelText}>{label}</span> : null}
+            {label ? <span className={cls.labelText}>{`${label}:`}</span> : null}
             <input
                 ref={inputRef}
                 className={cls.input}

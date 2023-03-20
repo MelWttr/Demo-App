@@ -9,8 +9,9 @@ import React, {
     useEffect,
     useRef,
     useCallback,
+    MutableRefObject,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -31,7 +32,7 @@ export const Modal: FC<ModalProps> = ({
     const [isClosing, setIsClosing] = useState(false);
     const [isOpening, setIsOpening] = useState(false);
 
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     const closeHandler = useCallback(() => {
         setIsOpening(false);
@@ -64,7 +65,7 @@ export const Modal: FC<ModalProps> = ({
         e.stopPropagation();
     };
 
-    const mods = useMemo(() => ({
+    const mods: Mods = useMemo(() => ({
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
         [cls.isOpening]: isOpening,

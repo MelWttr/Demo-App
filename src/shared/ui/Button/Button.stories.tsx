@@ -95,6 +95,6 @@ Inverted.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
     children: 'Text',
-    Disabled: true,
+    disabled: true,
     theme: ButtonTheme.OUTLINE,
 };
