@@ -26,6 +26,17 @@
     background-color: var(--inverted-bg-color);
 }
 
+.red {
+    border-color: var(--error-color-dark);
+    color: var(--error-color-dark);
+}
+
+.red-outline {
+    border: 1px solid var(--error-color-dark);
+    padding: 10px 15px;
+    color: var(--error-color-dark);
+}
+
 .square {
     padding: 0;
 

@@ -3,22 +3,22 @@ import {
     FC,
     InputHTMLAttributes,
     memo,
-    useState,
     useEffect,
     useRef,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
     className?: string;
     type?: string;
-    value?: string;
+    value?: string | number;
     label?: string;
     autofocus?: boolean;
     onChange?: (value: string) => void;
+    readonly?: boolean;
 }
 
 export const Input: FC<InputProps> = memo((props: InputProps) => {
@@ -29,6 +29,7 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
         label,
         autofocus,
         onChange,
+        readonly,
         ...other
     } = props;
 
@@ -43,8 +44,14 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
     };
+
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
+
     return (
-        <label className={classNames(cls.inputLabel, {}, [className])}>
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
+        <label className={classNames(cls.inputLabel, mods, [className])}>
             {label ? <span className={cls.labelText}>{`${label}:`}</span> : null}
             <input
                 ref={inputRef}
@@ -52,6 +59,7 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
                 type={type}
                 value={value}
                 onChange={onChangeHandler}
+                readOnly={readonly}
                 {...other}
             />
         </label>

@@ -1,3 +1,4 @@
+/* stylelint-disable property-no-vendor-prefix */
 .inputLabel {
     display: flex;
 }
@@ -9,4 +10,22 @@
     width: 100%;
     color: var(--primary-color);
     background-color: transparent;
+
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    &[type="number"] {
+        -moz-appearance: textfield;
+
+        &:hover,
+        &:focus {
+            -moz-appearance: number-input;
+        }
+    }
+}
+
+.readonly {
+    opacity: 0.7;
 }

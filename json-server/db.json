@@ -29,11 +29,10 @@
     "first": "John",
     "lastname": "Smith",
     "age": 22,
-    "currency": "RUB",
+    "currency": "USD",
     "country": "Russia",
     "city": "Saint-P",
     "username": "admin",
-    "avatar": "https://static.wikia.nocookie.net/metalgear/images/7/78/Big_Boss_TPP_infobox.png/revision/latest?cb=20180901131627"
-
-   }
+    "avatar": "https://cs7.pikabu.ru/post_img/2019/05/26/5/1558854561192413352.jpg"
+  }
 }

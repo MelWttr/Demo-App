@@ -5,5 +5,18 @@
   "Your lastname": "Your lastname",
   "Edit": "Edit profile",
   "Firstname": "Firstname",
-  "Lastname": "Lastname"
+  "Lastname": "Lastname",
+  "errorOccured": "Error occured",
+  "updatePage": "please reload page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "age": "Your age",
+  "Age": "Age",
+  "Your age": "Your age",
+  "City": "City",
+  "Your city": "Your city",
+  "Your username": "Your username",
+  "Avatar": "Avatar",
+  "Your avatar": "Enter avatar link",
+  "AltAvatar": "user avatar"
 }

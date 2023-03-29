@@ -3,19 +3,22 @@
     padding: 20px;
 }
 
-.header {
-    display: flex;
-}
-
-.editBtn {
-    margin-left: auto;
-}
-
-.userData {
-    margin-top: 30px;
-}
-
 .userInput {
     display: flex;
     margin-bottom: 10px;
+}
+
+.loader,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatarWrapper {
+    display: flex;
+}
+
+.editing {
+    border-color: var(--inverted-primary-color);
 }

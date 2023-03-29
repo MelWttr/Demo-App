@@ -8,11 +8,14 @@
   "Error": "Error occured",
   "Reload": "Reload page",
   "Enter": "Enter",
-  "Username": "Enter username",
+  "Username": "Username",
   "Email": "Enter email",
   "Password": "Enter password",
   "Auth": "Authorization",
   "Invalid username or password": "Invalid username or password",
   "Exit": "Exit",
-  "Profile": "Profile page"
+  "Profile": "Profile page",
+  "UserAvatar": "user avatar",
+  "Currency": "Enter currency",
+  "Country": "Enter your country"
 }
