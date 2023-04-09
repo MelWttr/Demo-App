@@ -1,25 +1,11 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
 import { getProfileError } from './getProfileError';
 
 describe('getProfileError.test', () => {
     test('should return error', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
-                data: {
-                    first: 'string',
-                    lastname: 'string',
-                    age: 22,
-                    currency: Currency.RUB,
-                    country: Country.Russia,
-                    city: 'string',
-                    username: 'string',
-                    avatar: 'string',
-                },
-                isLoading: false,
                 error: 'error',
-                readonly: false,
             },
         };
         expect(getProfileError(state as StateSchema)).toEqual('error');

@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'widgets/Loader/ui/Loader';
-import { ProfileHeader } from 'pages/ProfilePage';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { CurrencySelect, Currency } from 'entities/Currency';
 import { CountrySelect, Country } from 'entities/Country';
@@ -17,8 +16,6 @@ interface ProfileCardProps {
  error?: string;
  isLoading?: boolean;
  readonly?: boolean;
- avatar?: string;
- username?: string;
  onChangeFirstname?: (value?: string) => void
  onChangeLastname?: (value?: string) => void
  onChangeAge?: (value?: string) => void
@@ -75,7 +72,6 @@ export const ProfileCard: FC<ProfileCardProps> = (props: ProfileCardProps) => {
 
     return (
         <div className={classNames(cls.profileCard, mods, [className])}>
-            <ProfileHeader />
             <div className={cls.userData}>
 
                 {data?.avatar

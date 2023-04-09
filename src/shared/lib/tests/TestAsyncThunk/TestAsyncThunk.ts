@@ -1,6 +1,5 @@
+import { StateSchema } from 'app/providers/StoreProvider';
 import { AsyncThunkAction } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import axios, { AxiosStatic } from 'axios';
 
 type ActionCreatorType<Return, Arg, RejectedValue>
