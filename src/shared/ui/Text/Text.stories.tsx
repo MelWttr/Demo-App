@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storyBook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -68,3 +68,21 @@ ErrorDark.args = {
     theme: TextTheme.ERROR,
 };
 ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam hic temporibus optio porro quibusdam ab ad expedita dolorem voluptates aliquid.',
+    theme: TextTheme.ERROR,
+    size: TextSize.L,
+};
+SizeL.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const SizeM = Template.bind({});
+SizeL.args = {
+    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam hic temporibus optio porro quibusdam ab ad expedita dolorem voluptates aliquid.',
+    theme: TextTheme.ERROR,
+    size: TextSize.M,
+};
+SizeM.decorators = [ThemeDecorator(Theme.LIGHT)];

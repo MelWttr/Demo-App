@@ -1,3 +1,7 @@
 {
-    "Article": "Статья"
-  }
+  "Article": "Статья",
+  "ArticleDetailed": "Статья деталка",
+  "ArticleNotFound": "Статья не найдена",
+  "ArticleLoading": "...Загрузка",
+  "ArticleError": "Произошла ошибка при загрузке статьи"
+}

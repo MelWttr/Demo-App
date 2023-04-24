@@ -1,3 +1,7 @@
 {
-    "Article": "Article"
-  }
+  "Article": "Article",
+  "ArticleDetailed": "Article Detailed",
+  "ArticleNotFound": "Article not found",
+  "ArticleLoading": "...Loading",
+  "ArticleError": "Error has been occured"
+}

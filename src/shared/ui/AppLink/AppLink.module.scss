@@ -4,6 +4,11 @@
     overflow: hidden;
     min-height: 24px;
     color: var(--primary-color);
+    transition: "opacity" 200ms;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .primary {

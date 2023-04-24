@@ -1,6 +1,5 @@
 import { FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
@@ -14,12 +13,18 @@ export enum TextAlign {
     CENTER = 'center',
 }
 
+export enum TextSize {
+    M = 'size_m',
+    L = 'size_l',
+}
+
 interface TextProps {
     className?: string;
     text?: string;
     title?: string;
     theme?: TextTheme;
     align?: TextAlign;
+    size?: TextSize;
 }
 
 export const Text: FC<TextProps> = memo((props: TextProps) => {
@@ -27,13 +32,13 @@ export const Text: FC<TextProps> = memo((props: TextProps) => {
         text,
         title,
         className = '',
+        size = TextSize.M,
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
     } = props;
-    const { t } = useTranslation();
 
     return (
-        <div className={classNames('', {}, [className, cls[theme], cls[align]])}>
+        <div className={classNames('', {}, [className, cls[theme], cls[align], cls[size]])}>
             {title ? <p className={cls.title}>{title}</p> : null}
             {text ? <p className={cls.paragraph}>{text}</p> : null}
         </div>
