@@ -3,5 +3,6 @@
   "ArticleDetailed": "Статья деталка",
   "ArticleNotFound": "Статья не найдена",
   "ArticleLoading": "...Загрузка",
-  "ArticleError": "Произошла ошибка при загрузке статьи"
+  "ArticleError": "Произошла ошибка при загрузке статьи",
+  "Comments": "Комментарии"
 }
