@@ -18,12 +18,12 @@ const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />
 export const Light = Template.bind({});
 Light.args = {
 };
-Light.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({ user: { authData: { id: '123', userName: 'admin' } } })];
+Light.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({ user: { authData: { id: '123', username: 'admin' } } })];
 
 export const Dark = Template.bind({});
 Dark.args = {
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: { id: '123', userName: 'admin' } } })];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: { id: '123', username: 'admin' } } })];
 
 export const NoAuth = Template.bind({});
 NoAuth.args = {};

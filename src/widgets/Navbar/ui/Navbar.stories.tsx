@@ -29,5 +29,5 @@ export const Auth = Template.bind({});
 Auth.args = {
 };
 Auth.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    user: { authData: { id: '123', userName: 'admin' } },
+    user: { authData: { id: '123', username: 'admin' } },
 })];
