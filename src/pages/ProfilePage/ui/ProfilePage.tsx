@@ -1,4 +1,4 @@
-import { FC, useEffect, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 // import cls from './ProfilePage.module.scss';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -20,6 +20,8 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 
 interface ProfilePageProps {
@@ -39,6 +41,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className = '' }: ProfilePageProps)
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
     const errors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{id: string}>();
 
     const validateErrorTranslation = {
         [ValidateProfileError.SERVER_ERROR]: t('serverEror'),
@@ -48,11 +51,11 @@ const ProfilePage: FC<ProfilePageProps> = ({ className = '' }: ProfilePageProps)
         [ValidateProfileError.NO_DATA]: t('noData'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfileForm({ first: value || '' }));

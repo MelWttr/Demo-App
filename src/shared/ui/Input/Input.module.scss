@@ -11,6 +11,10 @@
     color: var(--primary-color);
     background-color: transparent;
 
+    &::placeholder {
+        color: var(--primary-color);
+    }
+
     &[type="number"]::-webkit-outer-spin-button,
     &[type="number"]::-webkit-inner-spin-button {
         -webkit-appearance: none;

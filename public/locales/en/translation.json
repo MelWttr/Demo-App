@@ -19,5 +19,7 @@
   "Currency": "Enter currency",
   "Country": "Enter your country",
   "Copy": "Copy",
-  "noComments": "Comments not found"
+  "noComments": "Comments not found",
+  "EnterCommentText": "Enter comment text",
+  "SendComment": "Send"
 }
