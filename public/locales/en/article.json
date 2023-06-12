@@ -4,5 +4,7 @@
   "ArticleNotFound": "Article not found",
   "ArticleLoading": "...Loading",
   "ArticleError": "Error has been occured",
-  "Comments": "Comments"
+  "Back": "Back to list",
+  "Comments": "Comments",
+  "ReadMore": "Read more"
 }

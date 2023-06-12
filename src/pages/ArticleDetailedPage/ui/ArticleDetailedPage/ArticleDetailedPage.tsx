@@ -2,13 +2,15 @@ import { FC, memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ArticleDetailed } from 'entities/Article';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { AddCommentForm } from 'features/AddCommentForm/';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { articleDetailedCommentsReducer, getArticleComments } from '../../model/slices/articleDetailedCommentsSlice';
 import cls from './ArticleDetailedPage.module.scss';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -29,6 +31,11 @@ const ArticleDetailedPage: FC<ArticleDetailedPageProps> = ({ className = '' }: A
     const dispatch = useDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const navigate = useNavigate();
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
 
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
@@ -48,6 +55,9 @@ const ArticleDetailedPage: FC<ArticleDetailedPageProps> = ({ className = '' }: A
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames(cls.articleDetailedPage, {}, [className])}>
+                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+                    {t('Back')}
+                </Button>
                 <ArticleDetailed id={id} />
                 <Text className={cls.commentsTitle} title={t('Comments')} />
                 <AddCommentForm onSendComment={onSendComment} />
