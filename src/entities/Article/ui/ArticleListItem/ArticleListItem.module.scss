@@ -83,8 +83,8 @@
         margin-top: 8px;
 
         & p {
+            overflow: hidden;
             width: 200px;
-            width: 115px;
             white-space: nowrap;
             text-overflow: ellipsis;
         }

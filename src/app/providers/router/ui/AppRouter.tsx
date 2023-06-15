@@ -28,13 +28,11 @@ const AppRouter = () => {
     }, []);
 
     return (
-        <div className="content-wrapper">
-            <Suspense fallback={<Loader />}>
-                <Routes>
-                    {Object.values(routeConfig).map(renderWithWrapper)}
-                </Routes>
-            </Suspense>
-        </div>
+        <Suspense fallback={<Loader />}>
+            <Routes>
+                {Object.values(routeConfig).map(renderWithWrapper)}
+            </Routes>
+        </Suspense>
     );
 };
 
