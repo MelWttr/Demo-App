@@ -5,3 +5,4 @@ export {
 export { Article, ArticleView } from './model/types/article';
 export { ArticleDetailedSchema } from './model/types/articleDetailedSchema';
 export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';

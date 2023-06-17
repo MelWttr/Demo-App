@@ -3,5 +3,5 @@ import { lazy, FC } from 'react';
 import { AddCommentFormProps } from './AddCommentForm';
 
 export const AddCommentFormLazy = lazy<FC<AddCommentFormProps>>(
-    () => lazyLoadingTimeout(import('./AddCommentForm'), 1000),
+    () => lazyLoadingTimeout(import('./AddCommentForm'), 400),
 );
