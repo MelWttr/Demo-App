@@ -1,13 +1,14 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './NotFoundPage.module.scss';
 
 export const NotFoundPage: FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div className={cls.notFoundPage}>
+        <Page className={cls.notFoundPage}>
             {t('NotFound')}
-        </div>
+        </Page>
     );
 };
