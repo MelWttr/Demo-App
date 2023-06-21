@@ -3,5 +3,5 @@ import { lazy, FC } from 'react';
 import { LoginFormProps } from './LoginForm';
 
 export const LoginFormLazy = lazy<FC<LoginFormProps>>(
-    () => lazyLoadingTimeout(import('./LoginForm'), 1000),
+    () => lazyLoadingTimeout(import('./LoginForm'), 400),
 );

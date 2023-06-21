@@ -12,9 +12,7 @@ const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
         const element = (
             <Suspense fallback={<Loader />}>
-                <div className="content-wrapper">
-                    {route.element}
-                </div>
+                {route.element}
             </Suspense>
         );
 
@@ -28,13 +26,11 @@ const AppRouter = () => {
     }, []);
 
     return (
-        <div className="content-wrapper">
-            <Suspense fallback={<Loader />}>
-                <Routes>
-                    {Object.values(routeConfig).map(renderWithWrapper)}
-                </Routes>
-            </Suspense>
-        </div>
+        <Suspense fallback={<Loader />}>
+            <Routes>
+                {Object.values(routeConfig).map(renderWithWrapper)}
+            </Routes>
+        </Suspense>
     );
 };
 

@@ -5,6 +5,7 @@
 @import "themes/orange";
 
 body {
+    margin: 0;
     font: var(--font-m);
     color: var(--primary-color);
 }
@@ -17,13 +18,4 @@ body {
 
 .page-wrapper {
     display: flex;
-}
-
-.content-wrapper {
-    flex-grow: 1;
-    flex-shrink: 100;
-    overflow-y: auto;
-    padding: 20px;
-    padding-left: 45px;
-    height: calc(100vh - var(--navbar-height));
 }

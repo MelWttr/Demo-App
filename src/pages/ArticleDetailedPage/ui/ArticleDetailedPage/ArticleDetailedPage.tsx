@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { AddCommentForm } from 'features/AddCommentForm/';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { articleDetailedCommentsReducer, getArticleComments } from '../../model/slices/articleDetailedCommentsSlice';
 import cls from './ArticleDetailedPage.module.scss';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -47,14 +48,14 @@ const ArticleDetailedPage: FC<ArticleDetailedPageProps> = ({ className = '' }: A
 
     if (!id) {
         return (
-            <div className={classNames(cls.articleDetailedPage, {}, [className])}>
+            <Page className={classNames(cls.articleDetailedPage, {}, [className])}>
                 {t('ArticleNotFound')}
-            </div>
+            </Page>
         );
     }
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.articleDetailedPage, {}, [className])}>
+            <Page className={classNames(cls.articleDetailedPage, {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                     {t('Back')}
                 </Button>
@@ -65,7 +66,7 @@ const ArticleDetailedPage: FC<ArticleDetailedPageProps> = ({ className = '' }: A
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
 
         </DynamicModuleLoader>
     );
